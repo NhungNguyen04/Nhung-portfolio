@@ -5,6 +5,13 @@ import Navbar from '../components/Navbar'
 import HeroSection from '../components/HeroSection'
 import AboutMe from '../components/AboutMe'
 import SkillSections from '../components/SkillSections'
+import Projects from '../components/Projects'
+
+const projects = [
+  {
+    
+  }
+]
 
 export default function Home () {
   return (
@@ -20,6 +27,7 @@ export default function Home () {
         <HeroSection />
         <AboutMe />
         <SkillSections />
+        <Projects />
       </main>
       {/* Footer */}
     </div>

@@ -4,7 +4,7 @@ import { cn } from '../lib/utils';
 
 export default function ThemeToggle() {
 
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
+  const [isDarkMode, setIsDarkMode] = React.useState(true);
 
   useEffect(() => {
 
