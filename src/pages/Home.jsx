@@ -3,6 +3,8 @@ import ThemeToggle from '../components/ThemeToggle'
 import StarBackground from '../components/StarBackground'
 import Navbar from '../components/Navbar'
 import HeroSection from '../components/HeroSection'
+import AboutMe from '../components/AboutMe'
+import SkillSections from '../components/SkillSections'
 
 export default function Home () {
   return (
@@ -16,6 +18,8 @@ export default function Home () {
       {/* Main content */}
       <main>
         <HeroSection />
+        <AboutMe />
+        <SkillSections />
       </main>
       {/* Footer */}
     </div>
