@@ -6,12 +6,8 @@ import HeroSection from '../components/HeroSection'
 import AboutMe from '../components/AboutMe'
 import SkillSections from '../components/SkillSections'
 import Projects from '../components/Projects'
+import Contact from '../components/Contact'
 
-const projects = [
-  {
-    
-  }
-]
 
 export default function Home () {
   return (
@@ -28,6 +24,7 @@ export default function Home () {
         <AboutMe />
         <SkillSections />
         <Projects />
+        <Contact />
       </main>
       {/* Footer */}
     </div>
