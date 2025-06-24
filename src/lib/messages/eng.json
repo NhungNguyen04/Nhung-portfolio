@@ -51,9 +51,12 @@
     }
   },
   "projects": {
+    "featured": "Featured",
+    "projects": "Projects",
+    "description": "Here are some of my notable projects that showcase my skills in fullstack development, system design, and AI integration.",
     "workspacing": {
       "title": "Workspacing",
-      "description": "A full-stack productivity platform for personal and team workspaces with AI-powered task suggestions."
+      "description": "An all-in-one productivity platform for personal and team workspaces with text editors for documents and kanban board for tasks, along with AI-powered task suggestions."
     },
     "authentication": {
       "title": "Authentication",
@@ -69,8 +72,50 @@
     }
   },
   "contact": {
-    "title": "Contact",
-    "submit": "Submit",
-    "submitting": "Submitting..."
+    "getin": "Get In",
+    "touch": "Touch",
+    "description": "Feel free to reach out, I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+    "information": {
+      "title": "Contact Information",
+      "email": {
+        "label": "Email",
+        "value": "nguyennhungforwork04@gmail.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+84 376 396 233"
+      },
+      "location": {
+        "label": "Location",
+        "value": "Ho Chi Minh City, Vietnam"
+      }
+    },
+    "connect": {
+      "title": "Connect With Me",
+      "discord": {
+        "label": "Discord",
+        "value": "Nhunx"
+      },
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/nhungularity",
+        "facebook": "https://www.facebook.com/nhungularity/",
+        "discord": "https://discord.com/users/nhunx"
+      }
+    },
+    "form": {
+      "title": "Send a Message",
+      "fields": {
+        "name": "Your Name",
+        "email": "Your Email",
+        "message": "Your Message"
+      },
+      "placeholder": {
+        "name": "Nhung Nguyen",
+        "email": "youremail@mail.com",
+        "message": "Hello, I'd like to talk about..."
+      },
+      "submit": "Send Message",
+      "loading": "Loading"
+    }
   }
 }

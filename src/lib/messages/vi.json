@@ -37,5 +37,85 @@
         "description": "Khám phá cách AI có thể nâng cao trải nghiệm người dùng — như các task được tạo bởi AI, thử đồ ảo."
       }
     }
+  },
+  "skills": {
+    "title": "Kỹ năng của tôi",
+    "categories": {
+      "all": "Tất cả",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "mobile": "Mobile",
+      "ai": "AI",
+      "tools": "Công cụ"
+    }
+  },
+  "projects": {
+    "featured": "Dự Án",
+    "projects": "Nổi Bật",
+    "description": "Dưới đây là một số dự án đáng chú ý của tôi, thể hiện kỹ năng của tôi trong lập trình fullstack, thiết kế hệ thống và tích hợp AI.",
+    "workspacing": {
+      "title": "Workspacing",
+      "description": "Một nền tảng hỗ trợ làm việc đa nhiệm cho cá nhân và nhóm bằng việc quản lý ghi chú với text editor và task với kanban board, hỗ trợ gợi ý task bởi AI."
+    },
+    "authentication": {
+      "title": "Authentication",
+      "description": "Authentication toolkit của tôi với các components, hooks và utils có thể tái sử dụng để sử dụng xác thực trong các compnent server & client, API routes và server actions."
+    },
+    "clothing": {
+      "title": "Clothing Shop",
+      "description": "Một nền tảng thương mại điện tử với trang web và ứng dụng di động để mua và bán quần áo."
+    },
+    "vonders": {
+      "title": "Vonders",
+      "description": "Một nền tảng web để khám phá các điểm đến mang tính biểu tượng nhất của Việt Nam, các sự kiện văn hóa và các tour du lịch."
+    }
+  },
+  "contact": {
+    "getin": "Liên",
+    "touch": "Hệ",
+    "description": "Đừng ngần ngại liên hệ với tôi, tôi luôn sẵn sàng thảo luận về các dự án mới, ý tưởng sáng tạo hoặc cơ hội để trở thành một phần trong tầm nhìn của bạn.",
+    "information": {
+      "title": "Thông tin liên hệ",
+      "email": {
+        "label": "Email",
+        "value": "nguyennhungforwork04@gmail.com"
+      },
+      "phone": {
+        "label": "Điện thoại",
+        "value": "+84 376 396 233"
+      },
+      "location": {
+        "label": "Vị trí",
+        "value": "Ho Chi Minh City, Vietnam"
+      }
+    },
+    "connect": {
+      "title": "Kết nối với tôi",
+      "discord": {
+        "label": "Discord",
+        "value": "Nhunx"
+      },
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/nhungularity",
+        "facebook": "https://www.facebook.com/nhungularity/",
+        "discord": "https://discord.com/users/nhunx"
+      }
+    },
+    "form": {
+      "title": "Gửi tin nhắn",
+      "fields": {
+        "name": "Tên của bạn",
+        "email": "Email của bạn",
+        "message": "Tin nhắn của bạn"
+      },
+      "placeholder": {
+        "name": "Nhung Nguyen",
+        "email": "youremail@mail.com",
+        "message": "Nhập tin nhắn của bạn tại đây..."
+      },
+      "submit": "Gửi tin nhắn",
+      "loading": "Đang gửi"
+    }
   }
 }

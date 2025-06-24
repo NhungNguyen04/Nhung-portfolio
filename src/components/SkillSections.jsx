@@ -50,14 +50,8 @@ const SkillSections = () => {
             (activeCategory === "all" || skill.category === activeCategory) &&
             <div key={key} className='bg-card p-6 rounded-lg shadow-xs card-hover'>
               <div className='text-left'>
-                <h3 className='font-semibold text-lg mb-4'>{skill.name}</h3>
-                <div className='w-full bg-secondary/50 h-2 rounded-full overflow-hidden'>
-                  <div className='bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]' 
-                  style={{width: skill.level + "%"}}/>
-                </div>
-                <div className='text-right mt-1'>
-                  <span className='text-sm text-muted-foreground'>{skill.level}%</span>
-                </div>
+                <h3 className='font-semibold text-lg mb-2'>{skill.name}</h3>
+                {/* Removed level bar and percentage */}
               </div>
             </div>
           ))}
