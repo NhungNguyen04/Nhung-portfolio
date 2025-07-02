@@ -1,5 +1,11 @@
 {
   "nav": {
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "ownerAuth": "Owner Auth",
+    "ownerSection": "Owner Section"
+  },
+  "sectionNav": {
     "home": "Home",
     "about": "About",
     "skills": "Skills",
@@ -118,5 +124,44 @@
       "submit": "Send Message",
       "loading": "Loading"
     }
+  },
+  "auth": {
+    "title": "Owner Authentication",
+    "subtitle": "Please sign in with your authorized Google account",
+    "signInButton": "Sign in with Google",
+    "signOutButton": "Sign out",
+    "signedInAs": "Signed in as",
+    "loading": "Loading...",
+    "redirecting": "Redirecting to dashboard..."
+  },
+  "authError": {
+    "accessDenied": {
+      "title": "Access Denied",
+      "message": "You cannot be authorized as the owner of this portfolio. Please continue browsing other pages."
+    },
+    "configuration": {
+      "title": "Configuration Error", 
+      "message": "There is a problem with the server configuration. Please try again later."
+    },
+    "verification": {
+      "title": "Verification Error",
+      "message": "Unable to verify your identity. Please try signing in again."
+    },
+    "default": {
+      "title": "Authentication Error",
+      "message": "An unexpected error occurred during authentication. Please try again."
+    },
+    "note": "Note: Only authorized email addresses can access this portfolio. If you need access, please contact the owner.",
+    "tryAgain": "Try Again",
+    "goHome": "Go to Home",
+    "technicalDetails": "Technical Details",
+    "errorCode": "Error Code"
+  },
+  "blog": {
+    "title": "Blog",
+    "comingSoon": "Coming Soon",
+    "description": "I'm currently working on creating meaningful content to share my journey, insights, and learnings in software development.",
+    "backToPortfolio": "Back to Portfolio",
+    "returnToPortfolio": "Return to Portfolio"
   }
 }

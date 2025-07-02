@@ -1,5 +1,11 @@
 {
   "nav": {
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "ownerAuth": "Đăng nhập",
+    "ownerSection": "Khu vực quản lý"
+  },
+  "sectionNav": {
     "home": "Trang chủ",
     "about": "Giới thiệu",
     "skills": "Kỹ năng",
@@ -118,5 +124,44 @@
       "submit": "Gửi tin nhắn",
       "loading": "Đang gửi"
     }
+  },
+  "auth": {
+    "title": "Xác thực chủ sở hữu",
+    "subtitle": "Vui lòng đăng nhập bằng tài khoản Google được ủy quyền",
+    "signInButton": "Đăng nhập với Google",
+    "signOutButton": "Đăng xuất",
+    "signedInAs": "Đã đăng nhập với tài khoản",
+    "loading": "Đang tải...",
+    "redirecting": "Đang chuyển hướng đến trang quản trị..."
+  },
+  "authError": {
+    "accessDenied": {
+      "title": "Từ chối truy cập",
+      "message": "Bạn không thể được ủy quyền làm chủ sở hữu của portfolio này. Vui lòng tiếp tục duyệt các trang khác."
+    },
+    "configuration": {
+      "title": "Lỗi cấu hình",
+      "message": "Có vấn đề với cấu hình máy chủ. Vui lòng thử lại sau."
+    },
+    "verification": {
+      "title": "Lỗi xác minh",
+      "message": "Không thể xác minh danh tính của bạn. Vui lòng thử đăng nhập lại."
+    },
+    "default": {
+      "title": "Lỗi xác thực",
+      "message": "Đã xảy ra lỗi không mong muốn trong quá trình xác thực. Vui lòng thử lại."
+    },
+    "note": "Lưu ý: Chỉ các địa chỉ email được ủy quyền mới có thể truy cập portfolio này. Nếu bạn cần quyền truy cập, vui lòng liên hệ với chủ sở hữu.",
+    "tryAgain": "Thử lại",
+    "goHome": "Về trang chủ",
+    "technicalDetails": "Chi tiết kỹ thuật",
+    "errorCode": "Mã lỗi"
+  },
+  "blog": {
+    "title": "Blog",
+    "comingSoon": "Sắp ra mắt",
+    "description": "Tôi hiện đang làm việc để tạo ra nội dung có ý nghĩa để chia sẻ hành trình, hiểu biết và những điều học được trong phát triển phần mềm.",
+    "backToPortfolio": "Quay lại Portfolio",
+    "returnToPortfolio": "Quay lại Portfolio"
   }
 }

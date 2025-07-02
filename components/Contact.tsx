@@ -194,7 +194,7 @@ const Contact = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "cosmic-button pt-2 w-full flex items-center justify-center gap-2"
+                  "cosmic-button pt-2 w-full flex items-center justify-center gap-2 hover:cursor-pointer"
                 )}
               >
                 {isSubmitting

@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { cn } from '../lib/utils';
 import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../lib/languageContext';
+import { useSession } from 'next-auth/react';
 
 interface NavItem {
   name: string;
@@ -12,28 +13,30 @@ interface NavItem {
 
 interface Messages {
   nav: {
-    home: string;
-    about: string;
-    skills: string;
-    projects: string;
-    contact: string;
+    portfolio: string;
+    blog: string;
+    ownerAuth: string;
+    ownerSection: string;
   };
   [key: string]: any;
 }
 
-const getNavItems = (messages: Messages): NavItem[] => [
-  { name: messages.nav.home, href: '#hero' },
-  { name: messages.nav.about, href: '#about' },
-  { name: messages.nav.skills, href: '#skills' }, 
-  { name: messages.nav.projects, href: '#projects' },
-  { name: messages.nav.contact, href: '#contact' },  
+const getNavItems = (messages: Messages, isAuthenticated: boolean): NavItem[] => [
+  { name: messages.nav.portfolio, href: '/' },
+  { name: messages.nav.blog, href: '/blog' },
+  { 
+    name: isAuthenticated ? messages.nav.ownerSection : messages.nav.ownerAuth, 
+    href: isAuthenticated ? '/owner' : '/auth' 
+  },
 ];
 
 const Navbar = () => {
   const { language, toggleLanguage, messages } = useLanguage();
+  const { data: session, status } = useSession();
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const navItems = getNavItems(messages);
+  const isAuthenticated = status === 'authenticated';
+  const navItems = getNavItems(messages, isAuthenticated);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +71,7 @@ const Navbar = () => {
           ))}
           <button
             onClick={toggleLanguage}
-            className="flex items-center space-x-1 text-foreground/80 hover:text-primary transition-colors duration-300"
+            className="flex items-center space-x-1 text-foreground/80 hover:text-primary transition-colors duration-300 hover:cursor-pointer"
           >
             <Globe size={20} />
             <span>{language.toUpperCase()}</span>
@@ -77,7 +80,7 @@ const Navbar = () => {
 
         {/* mobile nav */}
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className='md:hidden p-2 text-foreground z-50'
+          className='md:hidden p-2 text-foreground z-50 hover:cursor-pointer'
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24}/>}
         </button>
@@ -100,7 +103,7 @@ const Navbar = () => {
                 toggleLanguage();
                 setIsMenuOpen(false);
               }}
-              className="flex items-center justify-center space-x-2 text-foreground/80 hover:text-primary transition-colors duration-300"
+              className="flex items-center justify-center space-x-2 text-foreground/80 hover:text-primary transition-colors duration-300 hover:cursor-pointer"
             >
               <Globe size={20} />
               <span>{language.toUpperCase()}</span>

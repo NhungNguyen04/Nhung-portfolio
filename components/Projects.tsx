@@ -115,7 +115,7 @@ const Projects = () => {
           <a
             href="https://github.com/NhungNguyen04"
             target="_blank"
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            className="cosmic-button w-fit flex items-center mx-auto gap-2 hover:cursor-pointer"
           >
             {messages.projects.githubCTA} <ArrowRight size={16} />
           </a>

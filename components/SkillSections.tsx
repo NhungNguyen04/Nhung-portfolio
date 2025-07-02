@@ -49,7 +49,7 @@ const SkillSections = () => {
           {categories.map((category, index) => (
             <button 
               key={index} 
-              className={`px-4 py-2 rounded-full transition-colors duration-300 ${activeCategory === category.id ? 'bg-primary text-white' : 'bg-secondary text-muted-foreground hover:bg-primary/10'}`}
+              className={`px-4 py-2 rounded-full transition-colors duration-300 hover:cursor-pointer ${activeCategory === category.id ? 'bg-primary text-white' : 'bg-secondary text-muted-foreground hover:bg-primary/10'}`}
               onClick={() => setActiveCategory(category.id)}
             >
               {category.label}

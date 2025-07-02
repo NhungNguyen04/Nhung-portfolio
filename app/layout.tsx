@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./index.css";
-import { LanguageProvider } from "../lib/languageContext";
+import Providers from "../components/Providers";
 
 export const metadata: Metadata = {
   title: "Nhung Nguyen - Portfolio",
@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <LanguageProvider>
+        <Providers>
           {children}
-        </LanguageProvider>
+        </Providers>
       </body>
     </html>
   );

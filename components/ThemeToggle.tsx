@@ -32,7 +32,7 @@ export default function ThemeToggle() {
   };
 
   return (
-    <button onClick={toggleTheme} className={cn("fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300",
+    <button onClick={toggleTheme} className={cn("fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300 hover:cursor-pointer",
       "focus:outline-hidden"
     )}>
       {isDarkMode ? 
