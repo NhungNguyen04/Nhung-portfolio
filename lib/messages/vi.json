@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "name": "Nhung",
+    "surname": "Nguyen",
+    "description": "Tôi là một sinh viên ngành Kỹ thuật Phần mềm đam mê phát triển các trang web full stack và ứng dụng di động.",
+    "viewWork": "Các dự án của tôi",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "me": "Bản thân",
+    "role": "Lập trình viên Fullstack",
+    "description1": "Là một sinh viên năm cuối ngành Kỹ thuật Phần mềm, đam mê xây dựng các phần mềm hữu ích và thân thiện với người dùng. Có kỹ năng vững về phát triển web và ứng dụng di động fullstack sử dụng các công nghệ như React, Next.js, NestJS và PostgreSQL.",
+    "description2": "Từ các dự án cá nhân đến các dự án cộng tác, tôi đã xây dựng các nền tảng hỗ trợ công việc, thương mại điện tử với các tính năng được hỗ trợ bởi AI. Tôi thích học hỏi công nghệ mới và thách thức bản thân để tạo ra các giải pháp thực tế, có thể sử dụng được.",
+    "getInTouch": "Liên hệ",
+    "downloadCVEng": "Tải CV (Eng)",
+    "downloadCVVie": "Tải CV (Vie)",
+    "cards": {
+      "fullstack": {
+        "title": "Phát triển Web & Di động Fullstack",
+        "description": "Xây dựng các trang web đáp ứng và ứng dụng di động đa nền tảng sử dụng các framework hiện đại như React, Next.js và React Native."
+      },
+      "team": {
+        "title": "Thiết kế hệ thống & Giao diện",
+        "description": "Thiết kế các hệ thống với nhiều roles, đảm bảo bảo mật và hiệu suất, đồng thời thiết kế các giao diện đẹp và thân thiện với người dùng."
+      },
+      "ai": {
+        "title": "Tích hợp & Nghiên cứu AI",
+        "description": "Khám phá cách AI có thể nâng cao trải nghiệm người dùng — như các task được tạo bởi AI, thử đồ ảo."
+      }
+    }
+  },
+  "skills": {
+    "title": "Kỹ năng của tôi",
+    "categories": {
+      "all": "Tất cả",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "mobile": "Mobile",
+      "ai": "AI",
+      "tools": "Công cụ"
+    }
+  },
+  "projects": {
+    "featured": "Dự Án",
+    "projects": "Nổi Bật",
+    "description": "Dưới đây là một số dự án đáng chú ý của tôi, thể hiện kỹ năng của tôi trong lập trình fullstack, thiết kế hệ thống và tích hợp AI.",
+    "workspacing": {
+      "title": "Workspacing",
+      "description": "Một nền tảng hỗ trợ làm việc đa nhiệm cho cá nhân và nhóm bằng việc quản lý ghi chú với text editor và task với kanban board, hỗ trợ gợi ý task bởi AI."
+    },
+    "authentication": {
+      "title": "Authentication",
+      "description": "Authentication toolkit của tôi với các components, hooks và utils có thể tái sử dụng để sử dụng xác thực trong các compnent server & client, API routes và server actions."
+    },
+    "clothing": {
+      "title": "Clothing Shop",
+      "description": "Một nền tảng thương mại điện tử với trang web và ứng dụng di động để mua và bán quần áo."
+    },
+    "vonders": {
+      "title": "Vonders",
+      "description": "Một nền tảng web để khám phá các điểm đến mang tính biểu tượng nhất của Việt Nam, các sự kiện văn hóa và các tour du lịch."
+    },
+    "githubCTA": "Xem Thêm Dự Án"
+  },
+  "contact": {
+    "getin": "Liên",
+    "touch": "Hệ",
+    "description": "Đừng ngần ngại liên hệ với tôi, tôi luôn sẵn sàng thảo luận về các dự án mới, ý tưởng sáng tạo hoặc cơ hội để trở thành một phần trong tầm nhìn của bạn.",
+    "information": {
+      "title": "Thông tin liên hệ",
+      "email": {
+        "label": "Email",
+        "value": "nguyennhungforwork04@gmail.com"
+      },
+      "phone": {
+        "label": "Điện thoại",
+        "value": "+84 376 396 233"
+      },
+      "location": {
+        "label": "Vị trí",
+        "value": "Ho Chi Minh City, Vietnam"
+      }
+    },
+    "connect": {
+      "title": "Kết nối với tôi",
+      "discord": {
+        "label": "Discord",
+        "value": "Nhunx"
+      },
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/nhungularity",
+        "facebook": "https://www.facebook.com/nhungularity/",
+        "discord": "https://discord.com/users/nhunx"
+      }
+    },
+    "form": {
+      "title": "Gửi tin nhắn",
+      "fields": {
+        "name": "Tên của bạn",
+        "email": "Email của bạn",
+        "message": "Tin nhắn của bạn"
+      },
+      "placeholder": {
+        "name": "Nhung Nguyen",
+        "email": "youremail@mail.com",
+        "message": "Nhập tin nhắn của bạn tại đây..."
+      },
+      "submit": "Gửi tin nhắn",
+      "loading": "Đang gửi"
+    }
+  }
+}
