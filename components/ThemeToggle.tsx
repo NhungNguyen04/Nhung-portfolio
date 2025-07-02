@@ -23,11 +23,15 @@ export default function ThemeToggle() {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
       setIsDarkMode(false);
+      // Dispatch storage event to notify other components
+      window.dispatchEvent(new Event('storage'));
     }
     else {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
       setIsDarkMode(true);
+      // Dispatch storage event to notify other components
+      window.dispatchEvent(new Event('storage'));
     }
   };
 

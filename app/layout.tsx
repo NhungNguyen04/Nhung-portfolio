@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./index.css";
 import Providers from "../components/Providers";
+import ThemeToggle from "@/components/ThemeToggle";
+import StarBackground from "@/components/StarBackground";
 
 export const metadata: Metadata = {
   title: "Nhung Nguyen - Portfolio",
@@ -16,6 +18,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <Providers>
+          {/* Theme toggle */}
+      <ThemeToggle />
+      {/* Background effects */}
+      <StarBackground />
           {children}
         </Providers>
       </body>
