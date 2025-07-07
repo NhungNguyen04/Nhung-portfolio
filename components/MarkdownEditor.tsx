@@ -317,7 +317,7 @@ Use the toolbar buttons above or type Markdown syntax directly!"
 
         {/* Preview */}
         {(previewMode === 'preview' || previewMode === 'split') && (
-          <div className={`${previewMode === 'split' ? 'w-1/2' : 'w-full'} bg-white`}>
+          <div className={`${previewMode === 'split' ? 'w-1/2' : 'w-full'} bg-card`}>
             <div className="h-96 overflow-y-auto p-4">
               {value.trim() ? (
                 <MarkdownRenderer content={value} className="prose-sm" />

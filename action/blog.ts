@@ -240,6 +240,39 @@ export async function getBlogBySlug(slug: string): Promise<{
   }
 }
 
+// Get blog by ID
+export async function getBlogById(id: string): Promise<{
+  success: boolean
+  data?: Blog
+  error?: string
+}> {
+  try {
+    const client = await clientPromise
+    const db = client.db('portfolio')
+    const collection = db.collection<Blog>('blogs')
+
+    const blog = await collection.findOne({ _id: new ObjectId(id) })
+
+    if (!blog) {
+      return {
+        success: false,
+        error: 'Blog not found'
+      }
+    }
+
+    return {
+      success: true,
+      data: blog as Blog
+    }
+  } catch (error) {
+    console.error('Error fetching blog:', error)
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to fetch blog'
+    }
+  }
+}
+
 // Update blog
 export async function updateBlog(id: string, formData: FormData): Promise<{
   success: boolean

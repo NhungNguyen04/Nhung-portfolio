@@ -211,7 +211,7 @@ export default function BlogListPage() {
                           View
                         </Link>
                         <Link
-                          href={`/owner/blog/edit/${blog._id?.toString()}`}
+                          href={`/owner/blog/edit?id=${blog._id?.toString()}`}
                           className="text-indigo-600 hover:text-indigo-900"
                         >
                           Edit

@@ -1,20 +1,21 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import MarkdownEditor from '@/components/MarkdownEditor'
-import { createBlog } from '@/action/blog'
+import { updateBlog, getBlogById, type Blog } from '@/action/blog'
 import { getAllTags, type Tag } from '@/action/tag'
 import { getAllcategories, type Category } from '@/action/category'
 
-export default function CreateBlogPage() {
+export default function EditBlogPage() {
+  const [blog, setBlog] = useState<Blog | null>(null)
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
-  const [selectedTags, setSelectedTags] = useState<string[]>([]) // Changed to store tag IDs
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [selectedCategory, setSelectedCategory] = useState('')
-  const [author, setAuthor] = useState('')
   const [published, setPublished] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState<string | null>(null)
   const [availableTags, setAvailableTags] = useState<Tag[]>([])
@@ -23,35 +24,66 @@ export default function CreateBlogPage() {
   const [loadingCategories, setLoadingCategories] = useState(true)
   
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const blogId = searchParams.get('id')
 
-  // Fetch available tags and categories on component mount
+  // Fetch blog data and available tags/categories on component mount
   useEffect(() => {
-    const fetchTagsAndCategories = async () => {
+    const fetchData = async () => {
+      if (!blogId) {
+        setError('No blog ID provided')
+        setIsLoading(false)
+        return
+      }
+
       try {
-        // Fetch tags
+        // Fetch the blog to edit
+        const blogResult = await getBlogById(blogId)
+        if (blogResult.success && blogResult.data) {
+          const blogData = blogResult.data
+          setBlog(blogData)
+          setTitle(blogData.title)
+          setContent(blogData.content)
+          setPublished(blogData.published)
+          
+          // Set selected tags (extract IDs from tag objects)
+          const tagIds = blogData.tags?.map(tag => tag._id?.toString() || '') || []
+          setSelectedTags(tagIds.filter(id => id))
+          
+          // Set selected category
+          setSelectedCategory(blogData.categoryId || '')
+        } else {
+          setError(blogResult.error || 'Failed to fetch blog')
+        }
+
+        // Fetch available tags
         const tagsResult = await getAllTags()
         if (tagsResult.success && tagsResult.data) {
           setAvailableTags(tagsResult.data)
         }
         
-        // Fetch categories
+        // Fetch available categories
         const categoriesResult = await getAllcategories()
         if (categoriesResult.success && categoriesResult.data) {
           setAvailableCategories(categoriesResult.data)
         }
       } catch (err) {
         console.error('Error fetching data:', err)
+        setError('Failed to load blog data')
       } finally {
+        setIsLoading(false)
         setLoadingTags(false)
         setLoadingCategories(false)
       }
     }
 
-    fetchTagsAndCategories()
-  }, [])
+    fetchData()
+  }, [blogId])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!blogId) return
+
     setIsSubmitting(true)
     setError(null)
     setSuccess(null)
@@ -60,29 +92,21 @@ export default function CreateBlogPage() {
       const formData = new FormData()
       formData.append('title', title)
       formData.append('content', content)
-      formData.append('tags', selectedTags.join(',')) // Convert tag IDs to comma-separated string
-      formData.append('author', author)
+      formData.append('tags', selectedTags.join(','))
       formData.append('published', published.toString())
-      formData.append('category', selectedCategory) // Add selected category
+      formData.append('category', selectedCategory)
 
-      const result = await createBlog(formData)
+      const result = await updateBlog(blogId, formData)
 
       if (result.success) {
-        setSuccess('Blog post created successfully!')
-        // Reset form
-        setTitle('')
-        setContent('')
-        setSelectedTags([])
-        setSelectedCategory('')
-        setAuthor('')
-        setPublished(false)
+        setSuccess('Blog post updated successfully!')
         
         // Redirect to blog list after a short delay
         setTimeout(() => {
           router.push('/owner/blog')
         }, 2000)
       } else {
-        setError(result.error || 'Failed to create blog post')
+        setError(result.error || 'Failed to update blog post')
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred')
@@ -92,6 +116,8 @@ export default function CreateBlogPage() {
   }
 
   const handleSaveDraft = async () => {
+    if (!blogId) return
+
     setIsSubmitting(true)
     setError(null)
     setSuccess(null)
@@ -100,15 +126,15 @@ export default function CreateBlogPage() {
       const formData = new FormData()
       formData.append('title', title)
       formData.append('content', content)
-      formData.append('tags', selectedTags.join(',')) // Convert tag IDs to comma-separated string
-      formData.append('author', author)
-      formData.append('category', selectedCategory) // Add selected category
+      formData.append('tags', selectedTags.join(','))
+      formData.append('category', selectedCategory)
       formData.append('published', 'false') // Save as draft
 
-      const result = await createBlog(formData)
+      const result = await updateBlog(blogId, formData)
 
       if (result.success) {
         setSuccess('Draft saved successfully!')
+        setPublished(false) // Update local state
       } else {
         setError(result.error || 'Failed to save draft')
       }
@@ -119,13 +145,59 @@ export default function CreateBlogPage() {
     }
   }
 
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background text-primary-foreground py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-card shadow-lg rounded-lg p-8">
+            <div className="flex items-center justify-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+              <span className="ml-4 text-lg text-gray-600">Loading blog...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (error && !blog) {
+    return (
+      <div className="min-h-screen bg-background text-primary-foreground py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-card shadow-lg rounded-lg p-8">
+            <div className="text-center">
+              <div className="bg-red-50 border border-red-200 rounded-md p-4">
+                <div className="flex justify-center">
+                  <div className="flex-shrink-0">
+                    <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm text-red-800">{error}</p>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={() => router.back()}
+                className="mt-4 bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              >
+                Go Back
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-background text-primary-foreground py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-card shadow-lg rounded-lg">
           <div className="px-6 py-4 border-b border-gray-200">
-            <h1 className="text-2xl font-bold text-gray-900">Create New Blog Post</h1>
-            <p className="text-gray-600 mt-1">Write and publish your blog post</p>
+            <h1 className="text-2xl font-bold text-gray-900">Edit Blog Post</h1>
+            <p className="text-gray-600 mt-1">Update your blog post</p>
           </div>
 
           <form onSubmit={handleSubmit} className="p-6 space-y-6">
@@ -337,9 +409,26 @@ export default function CreateBlogPage() {
                 className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
               <label htmlFor="published" className="ml-2 block text-sm text-gray-700">
-                Publish immediately
+                Published
               </label>
             </div>
+
+            {/* Blog Info */}
+            {blog && (
+              <div className="bg-gray-50 border border-gray-200 rounded-md p-4">
+                <h3 className="text-sm font-medium text-gray-700 mb-2">Blog Information</h3>
+                <div className="space-y-1 text-xs text-gray-600">
+                  <p><span className="font-medium">Slug:</span> {blog.slug}</p>
+                  <p><span className="font-medium">Created:</span> {new Date(blog.createdAt).toLocaleDateString()}</p>
+                  <p><span className="font-medium">Last Updated:</span> {new Date(blog.updatedAt).toLocaleDateString()}</p>
+                  <p><span className="font-medium">Status:</span> 
+                    <span className={`ml-1 ${blog.published ? 'text-green-600' : 'text-yellow-600'}`}>
+                      {blog.published ? 'Published' : 'Draft'}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-gray-200">
@@ -348,7 +437,7 @@ export default function CreateBlogPage() {
                 disabled={isSubmitting || !title.trim() || !content.trim()}
                 className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
               >
-                {isSubmitting ? 'Creating...' : published ? 'Publish Post' : 'Create Post'}
+                {isSubmitting ? 'Updating...' : published ? 'Update & Publish' : 'Update Post'}
               </button>
               
               <button
