@@ -26,10 +26,10 @@ const AboutMe = () => {
           </p>
           <div className='flex flex-col sm:flex-row pt-4 justify-center'>
             <a href="#contact" className='cosmic-button mr-4 hover:cursor-pointer'>{messages.about.getInTouch}</a>
-            <a href="https://drive.google.com/file/d/1JajDMzG95z_SYeTJV4jfA86TiURxQGCG/view?usp=sharing" className='px-4 py-2 rounded-l-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 hover:cursor-pointer'>
+            <a href="https://drive.google.com/file/d/1t-23NVGWFYVmiPWdqhAgYI-V8bz6m_x-/view?usp=sharing" className='px-4 py-2 rounded-l-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 hover:cursor-pointer'>
               {messages.about.downloadCVEng}
             </a>
-            <a href="https://drive.google.com/file/d/1gil-gRZDYjrvtJ7OdgW0IFXpQUsVAYzB/view?usp=sharing" className='px-4 py-2 rounded-r-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 hover:cursor-pointer'>
+            <a href="https://drive.google.com/file/d/1JLKPLyyaYk7scsjF_eIK6ENipD0iY6r5/view?usp=sharing" className='px-4 py-2 rounded-r-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 hover:cursor-pointer'>
               {messages.about.downloadCVVie}
             </a>
           </div>

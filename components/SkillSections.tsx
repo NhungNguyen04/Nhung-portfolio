@@ -7,21 +7,24 @@ const skills = [
   {name: 'HTML/CSS', level:90, category: 'frontend'},
   {name: 'JavaScript', level:90, category: 'frontend'},
   {name: 'TypeScript', level:90, category: 'frontend'},
-  {name: 'Python', level:70, category: 'ai'},
-  {name: 'Google Colab', level:70, category: 'ai'},
   {name: 'React', level:90, category: 'frontend'},
+  {name: 'Vue.js', level:80, category: 'frontend'},
   {name: 'Next.js', level:85, category: 'frontend'},
   {name: 'Tailwind CSS', level:85, category: 'frontend'},
-  {name: 'Node.js', level:90, category: 'backend'},
+   {name: 'Node.js', level:90, category: 'backend'},
   {name: 'Rest APIs', level:90, category: 'backend'},
   {name: 'Express.js', level:85, category: 'backend'},
   {name: 'NestJS', level:85, category: 'backend'},
   {name: 'PostgreSQL', level:90, category: 'database'},
   {name: 'MongoDB', level:80, category: 'database'},
-  {name: 'Git/Github', level:90, category: 'tools'},
+  {name: 'Prisma', level:85, category: 'database'},
+  {name: 'Sequelize', level:80, category: 'database'},
+  {name: 'Git/Github/Bitbucket', level:90, category: 'tools'},
   {name: 'Figma', level:85, category: 'tools'},
   {name: 'VS Code', level:90, category: 'tools'},
   {name: 'React Native', level:90, category: 'mobile'},
+   {name: 'Python', level:70, category: 'ai'},
+  {name: 'Google Colab', level:70, category: 'ai'},
 ];
 
 const SkillSections = () => {
@@ -60,9 +63,9 @@ const SkillSections = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {skills.map((skill, key) => (
             (activeCategory === "all" || skill.category === activeCategory) &&
-            <div key={key} className='bg-card p-6 rounded-lg shadow-xs card-hover'>
+            <div key={key} className='bg-card p-4 rounded-lg shadow-xs card-hover'>
               <div className='text-left'>
-                <h3 className='font-semibold text-lg mb-2'>{skill.name}</h3>
+                <h3 className='font-semibold text-md mb-2'>{skill.name}</h3>
                 {/* Removed level bar and percentage */}
               </div>
             </div>

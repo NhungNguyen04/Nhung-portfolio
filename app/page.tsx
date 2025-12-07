@@ -6,6 +6,7 @@ import SectionNavigator from '../components/SectionNavigator'
 import HeroSection from '../components/HeroSection'
 import AboutMe from '../components/AboutMe'
 import SkillSections from '../components/SkillSections'
+import Experience from '../components/Experience'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 
@@ -25,6 +26,7 @@ export default function Home () {
       <main>
         <HeroSection />
         <AboutMe />
+        <Experience />
         <SkillSections />
         <Projects />
         <Contact />

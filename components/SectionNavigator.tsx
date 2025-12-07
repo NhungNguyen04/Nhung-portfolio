@@ -14,6 +14,7 @@ interface Messages {
     home: string;
     about: string;
     skills: string;
+    experience: string;
     projects: string;
     contact: string;
   };
@@ -23,7 +24,8 @@ interface Messages {
 const getSectionNavItems = (messages: Messages): SectionNavItem[] => [
   { name: messages.sectionNav.home, href: '#hero' },
   { name: messages.sectionNav.about, href: '#about' },
-  { name: messages.sectionNav.skills, href: '#skills' }, 
+  { name: messages.sectionNav.experience, href: '#experience' },
+  { name: messages.sectionNav.skills, href: '#skills' },
   { name: messages.sectionNav.projects, href: '#projects' },
   { name: messages.sectionNav.contact, href: '#contact' },  
 ];
@@ -35,7 +37,7 @@ const SectionNavigator = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {

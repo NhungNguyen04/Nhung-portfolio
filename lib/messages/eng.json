@@ -9,6 +9,7 @@
     "home": "Home",
     "about": "About",
     "skills": "Skills",
+    "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact"
   },
@@ -16,15 +17,15 @@
     "title": "About",
     "me": "Me",
     "role": "Aspiring Fullstack Developer",
-    "description1": "I'm a final-year Software Engineering student passionate about building clean, user-friendly digital products. I specialize in fullstack web and mobile development using technologies like React, Next.js, NestJS, and PostgreSQL.",
-    "description2": "From solo projects to team-based academic platforms, I've built tools that support collaboration, e-commerce, and even AI-powered features. I enjoy learning new technologies and challenging myself to create real, usable solutions.",
+    "description1": "I'm a Fullstack software engineer with experience in web and mobile development. I specialize in fullstack web and mobile development using technologies like React, Next.js, NestJS, and PostgreSQL.",
+    "description2": "From academic projects to real-world applications, I've built tools that support collaboration, e-commerce, and even AI-powered features. I enjoy learning new technologies and challenging myself to create real, usable solutions.",
     "getInTouch": "Get In Touch",
     "downloadCVEng": "Download CV (Eng)",
     "downloadCVVie": "Download CV (Vie)",
     "cards": {
       "fullstack": {
         "title": "Fullstack Web & Mobile Development",
-        "description": "Building responsive websites and cross-platform mobile apps using modern frameworks like React, Next.js, and React Native."
+        "description": "Building responsive websites and cross-platform mobile apps using modern frameworks like Vue.js, React, Next.js, and React Native."
       },
       "team": {
         "title": "System Design & UI/UX",
@@ -40,9 +41,33 @@
     "greeting": "Hi, I'm",
     "name": "Nhung",
     "surname": "Nguyen",
-    "description": "I'm a software engineering student passionate about building impactful full-stack web and mobile applications.",
+    "description": "Full-stack software engineer",
     "viewWork": "View My Work",
     "scroll": "Scroll"
+  },
+  "experience": {
+    "title": "My Journey",
+    "experiences": [
+      {
+        "role": "Bachelor of Software Engineering",
+        "company": "HCM University of Information Technology (UIT)",
+        "duration": "Sep 2022 - Present",
+        "description": "Pursuing a Bachelor's degree in Software Engineering, through which acquired knowledge and skills in problem solving, computer science, and software development. Expected to graduate in 2026."
+      },
+      {
+        "role": "Fullstack Developer Intern (Full-time)",
+        "company": "Consortia Group",
+        "duration": "Sep 2025 - Nov 2025",
+        "description": "First time working in a professional software development environment. Get to know the workflow of building applications in a team, using version control with Git and collaborating through Agile methodologies."
+      },
+      {
+        "role": "Fullstack Developer (Full-time)",
+        "company": "Consortia Group",
+        "duration": "Nov 2025 - Present",
+        "description": "After two-months of internship, I was rated as exceeding expectations and offered a full-time position as a Fullstack Developer. Working on building and maintaining web applications, collaborating with cross-functional teams to deliver high-quality software solutions."
+      }
+    ]
+  
   },
   "skills": {
     "title": "My Skills",

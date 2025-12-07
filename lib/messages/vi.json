@@ -9,30 +9,23 @@
     "home": "Trang chủ",
     "about": "Giới thiệu",
     "skills": "Kỹ năng",
+    "experience": "Kinh nghiệm",
     "projects": "Dự án",
     "contact": "Liên hệ"
-  },
-  "hero": {
-    "greeting": "Xin chào, tôi là",
-    "name": "Nhung",
-    "surname": "Nguyen",
-    "description": "Tôi là một sinh viên ngành Kỹ thuật Phần mềm đam mê phát triển các trang web full stack và ứng dụng di động.",
-    "viewWork": "Các dự án của tôi",
-    "scroll": "Scroll"
   },
   "about": {
     "title": "Giới thiệu",
     "me": "Bản thân",
     "role": "Lập trình viên Fullstack",
-    "description1": "Là một sinh viên năm cuối ngành Kỹ thuật Phần mềm, đam mê xây dựng các phần mềm hữu ích và thân thiện với người dùng. Có kỹ năng vững về phát triển web và ứng dụng di động fullstack sử dụng các công nghệ như React, Next.js, NestJS và PostgreSQL.",
-    "description2": "Từ các dự án cá nhân đến các dự án cộng tác, tôi đã xây dựng các nền tảng hỗ trợ công việc, thương mại điện tử với các tính năng được hỗ trợ bởi AI. Tôi thích học hỏi công nghệ mới và thách thức bản thân để tạo ra các giải pháp thực tế, có thể sử dụng được.",
+    "description1": "Tôi là một kỹ sư phần mềm Fullstack có kinh nghiệm trong phát triển web và di động. Tôi chuyên về phát triển web và ứng dụng di động fullstack sử dụng các công nghệ như React, Next.js, NestJS và PostgreSQL.",
+    "description2": "Từ các dự án học thuật đến ứng dụng thực tế, tôi đã xây dựng các công cụ hỗ trợ cộng tác, thương mại điện tử và thậm chí các tính năng được hỗ trợ bởi AI. Tôi thích học hỏi công nghệ mới và thách thức bản thân để tạo ra các giải pháp thực tế, có thể sử dụng được.",
     "getInTouch": "Liên hệ",
     "downloadCVEng": "Tải CV (Eng)",
     "downloadCVVie": "Tải CV (Vie)",
     "cards": {
       "fullstack": {
         "title": "Phát triển Web & Di động Fullstack",
-        "description": "Xây dựng các trang web đáp ứng và ứng dụng di động đa nền tảng sử dụng các framework hiện đại như React, Next.js và React Native."
+        "description": "Xây dựng các trang web đáp ứng và ứng dụng di động đa nền tảng sử dụng các framework hiện đại như Vue.js, React, Next.js và React Native."
       },
       "team": {
         "title": "Thiết kế hệ thống & Giao diện",
@@ -43,6 +36,38 @@
         "description": "Khám phá cách AI có thể nâng cao trải nghiệm người dùng — như các task được tạo bởi AI, thử đồ ảo."
       }
     }
+  },
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "name": "Nhung",
+    "surname": "Nguyen",
+    "description": "Lập trình viên Full-stack",
+    "viewWork": "Các dự án của tôi",
+    "scroll": "Scroll"
+  },
+  "experience": {
+    "title": "Hành Trình Của Tôi",
+    "experiences": [
+      {
+        "role": "Cử nhân Kỹ thuật Phần mềm",
+        "company": "Đại học Công nghệ Thông tin - ĐHQG TP.HCM (UIT)",
+        "duration": "T9 2022 - Hiện tại",
+        "description": "Đang theo học chương trình Cử nhân Kỹ thuật Phần mềm, qua đó tích lũy kiến thức và kỹ năng về giải quyết vấn đề, khoa học máy tính và phát triển phần mềm. Dự kiến tốt nghiệp năm 2026."
+      },
+      {
+        "role": "Thực tập sinh Lập trình viên Fullstack (Full-time)",
+        "company": "Consortia Group",
+        "duration": "T9 2025 - T11 2025",
+        "description": "Lần đầu tiên làm việc trong môi trường phát triển phần mềm chuyên nghiệp. Được làm quen với quy trình xây dựng ứng dụng theo nhóm, sử dụng quản lý phiên bản với Git và cộng tác thông qua phương pháp Agile."
+      },
+      {
+        "role": "Lập trình viên Fullstack (Full-time)",
+        "company": "Consortia Group",
+        "duration": "T11 2025 - Hiện tại",
+        "description": "Sau hai tháng thực tập, tôi được đánh giá là vượt mong đợi và được đề nghị vị trí chính thức là Lập trình viên Fullstack. Làm việc trong việc xây dựng và bảo trì các ứng dụng web, cộng tác với các nhóm đa chức năng để cung cấp các giải pháp phần mềm chất lượng cao."
+      }
+    ]
+  
   },
   "skills": {
     "title": "Kỹ năng của tôi",
@@ -119,10 +144,10 @@
       "placeholder": {
         "name": "Nhung Nguyen",
         "email": "youremail@mail.com",
-        "message": "Nhập tin nhắn của bạn tại đây..."
+        "message": "Xin chào, tôi muốn nói về..."
       },
       "submit": "Gửi tin nhắn",
-      "loading": "Đang gửi"
+      "loading": "Đang tải"
     }
   },
   "auth": {
